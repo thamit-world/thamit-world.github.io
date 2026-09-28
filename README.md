@@ -24,7 +24,7 @@ GitHub Pages(`https://thamit-world.github.io/`)で配信し、VRChat ワール�
 | `m0/lib/` | 乱数・文章の素・日程・直列化・分割・検証・PNG |
 | `m0/qr-fixtures.json` | QR の行列(`uqr` 0.1.3 で作った結果) |
 | `m0/tools/make-qr-fixtures.mjs` | 上を作る使い捨ての道具(リポジトリの外で実行する) |
-| `m0/test/` | `node --test m0/test` |
+| `m0/test/` | `node --test "m0/test/*.test.mjs"` |
 | `static/` | `robots.txt`・`index.html`(`site/` にコピーされる) |
 | `.github/workflows/build.yml` | build → deploy → report |
 

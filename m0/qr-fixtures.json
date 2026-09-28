@@ -1,0 +1,54 @@
+{
+  "generator": "uqr@0.1.3 encode(url, { ecc: \"M\", border: 0 })",
+  "org": "thamit-world",
+  "fixtures": [
+    {
+      "name": "sample-3",
+      "url": "https://thamit-world.github.io/m0/qr/sample-3.html?from=vrc-world-m0",
+      "size": 37,
+      "modules": "fe64438bfc128a63906eb4c108bb750c87f5dba9d570aec179e26d07faaaaaafe0143c8700be6884cbe429d96a4a9c9fed9def593a3c57987c75b77f9a6d48b08978e4a8df30aba11733aa3d3fffb4eb0c2d61a7c61a361fd279483718aeae0eee00087e8421c87f31ef348bbfe633a35094eebee07b5a0b2dfa74aed7309a383f1961b53efb804648ac63f816abaaf051e32519baef3fffb5d62c09346eaa1b2a1704c10f391fefc42c4f8"
+    },
+    {
+      "name": "sample-12",
+      "url": "https://thamit-world.github.io/m0/qr/sample-12.html?from=vrc-world-m0",
+      "size": 37,
+      "modules": "fe31e92bfc132ea3906ebce70abb75a4a7f5dbadb930aec14c936d07faaaaaafe01450c300be6728ebe42fec3e6280c18bbf876b4d0c7790a2c4a67bc28c6a908abee53157232d2d97b3060f95deb48429680a82e37c365e723e78379a605f1eee7e375ca422d8d6a8ff3f3ab326332f203ee6be6bbe0b6921e692ae9f39e90b1e3aaec42eff804d6a8c63f94f33aaf053afe519babb957fb5d56958376ebc7d0a17048e3e351feb153c0b8"
+    },
+    {
+      "name": "sample-cafe-7",
+      "url": "https://thamit-world.github.io/m0/qr/sample-cafe-7.html?from=vrc-world-m0",
+      "size": 37,
+      "modules": "fe676b0bfc11b2a3906eb0e748bb7589a7f5dbab8974aec16d907d07faaaaaafe01df08700be732aebe5260c2a4aada28b9daef8990e571db104a77fe2e268b0839f1d38c765242d97737bbf9356b486e96962a3f27c1666e3aa78161924bf1eee00f25ea4207b86b8ff2e9633a6733afa30efbc86fe0f002286908cdf59190b3f38f4042efe0046688c63f98f3baaf05defe119bacb9bffb5d55989346ebb7b2a07049a1f399fec352c6f8"
+    },
+    {
+      "name": "sample-meetup-042",
+      "url": "https://thamit-world.github.io/m0/qr/sample-meetup-042.html?from=vrc-world-m0",
+      "size": 37,
+      "modules": "fe4d8a63fc145e47506ea4436ebb7580b9a5dba59974aec12e925507faaaaaafe01824410082bc204674c2919aa6abbb0bbdc620d316579e7d0811a4969ceab8a2696539cf710a5c106ff7e9937ab3add198e28ee44ecf6ab81850049eab5e1eee52ab9998535c66a9ff259513607b96e6e90e0eae66efea27b8908cc7522e046ffab3053efb007fea8443f9ec46aa30450f6311ba5193ffb5d1d5a9f36e80f90a17045026159fe8798bd08"
+    },
+    {
+      "name": "sample-lounge-night-15",
+      "url": "https://thamit-world.github.io/m0/qr/sample-lounge-night-15.html?from=vrc-world-m0",
+      "size": 37,
+      "modules": "fe415923fc127667d06eb0e76cbb7569a5f5dbadf130aec151715d07faaaaaafe01c74c700be24c24be00e69ea09b5f16bbfd6f0a23e7718acb4a67fe6f368b0833d1c39d7639365d33343b159f6b3a52df801b8fb9a144e5b755a361e668f1fea405a5ca4215ede38673a0937e2f36bfa726ebf0e9b9f482191d2ace733ba282e0ab9143efe80456a8c63f8562aaaf05ba3a119baa5d3ffb5d4a1d835eebe790a1f045f2c3d1feea43c4f8"
+    },
+    {
+      "name": "sample-long-name-page-0099",
+      "url": "https://thamit-world.github.io/m0/qr/sample-long-name-page-0099.html?from=vrc-world-m0",
+      "size": 41,
+      "modules": "fe7db10d3fc111d50e506ea3c44f8bb75164f135dba85192baec17f435c507faaaaaaafe01ec783400be595bccbe44a81c85f5d6bf6aa7ae091b40f273b4aed5267c72210346f1f7edb4588b4940343d1068727450c6d2a87f2fb59ce7a2313c8a442b2efb01b2ad384b2c3427dffa6dfdeb5eb8eae0427858672ba3c1d1754212f36cb79e5afd228f3405b5b3a33b90f3a4bed46f047102a65e8f533ff5d54a680e67e89a16cb7dfa00691d87c4ff81a8a56b10562326d18bab02680fa5d5ae8d52a2ea84a9e9e104a9b84192fef422f45a0"
+    },
+    {
+      "name": "sample-longest-page-name-0123",
+      "url": "https://thamit-world.github.io/m0/qr/sample-longest-page-name-0123.html?from=vrc-world-m0",
+      "size": 41,
+      "modules": "fe795d493fc12aa639506ebddbd2abb756e3b575dbaecbb0baec165875c507faaaaaaafe0199683400be664bccbe36ea1c85fd599922a7a81da104f27a8df0cfaef86ee6f9229bff4f352e6b48619e4a25685385cb775342f109d29ef6dc6aa72bcc8b1104d1b9fee3f90c3241b2eb7ded397cb8eb1969aa586718d39bc175038cd92cb7bed4a7e28f2642bde3a33a903ee43654764e4464cf5e1f5fc08bd178427911eaab9bd2effb00563ea046ff97731ceb105abfc8310baf115b2fa5d525dc4ab2eb5129eff9041278419afece02f45e0"
+    },
+    {
+      "name": "sample-page-30-characters-long",
+      "url": "https://thamit-world.github.io/m0/qr/sample-page-30-characters-long.html?from=vrc-world-m0",
+      "size": 41,
+      "modules": "fe2c93873fc135554c506eaee20a4bb75c87f3d5dba8c1129aec17dc75c507faaaaaaafe0123693400be084accbe165c1e85dde7bceb27b44a01a4f27d9baaaf267073033b46ffff0aaa498349206a3d116aaf1a52e5d3bc2c6ea5dcc9c8931c8b4fabefc961bbfa89d22d744787ba7dfcddd4b8ea5080775867ab1214517507dee46eb7bec9e2628f2e1e8373e339bbe644bed076ccbd22ab5ef83d2e61d163644a25e99e1543f4fb00664d97c4ff9be8a76a905e3205f18ba9b2680fa5d7668d5aa2ea17a9edf904f858419afe87e2f45a0"
+    }
+  ]
+}

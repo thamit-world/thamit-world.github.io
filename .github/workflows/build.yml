@@ -1,0 +1,75 @@
+name: build
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: refresh は常にデプロイ。build は中身が同じなら止める(§7.6 の確認用)
+        type: choice
+        options: [refresh, build]
+        default: refresh
+      active_dataset:
+        description: /v1/events/ に置く合成データ(keep は今のまま)
+        type: choice
+        options: [keep, sixty, sixty-alt, five-hundred, empty, paused, ended]
+        default: keep
+  schedule:
+    - cron: '7 15 * * *' # 毎日 0:07 JST。範囲と期限を進める(M0 の間だけ)。データセットは keep
+permissions: {}
+concurrency:
+  group: vrchat-world-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: builder
+      deployment: false
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.build.outputs.changed }}
+      summary: ${{ steps.build.outputs.summary }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+      - id: build
+        env:
+          MODE: ${{ inputs.mode || 'refresh' }}
+          ACTIVE_DATASET: ${{ inputs.active_dataset || 'keep' }}
+        run: node m0/generate-synthetic-calendar.mjs --out site --active "$ACTIVE_DATASET" --mode "$MODE"
+      - if: steps.build.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site/
+          retention-days: 1
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+  report:
+    needs: [build, deploy]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    environment:
+      name: builder
+      deployment: false
+    permissions: {}
+    steps:
+      - env:
+          SUMMARY: ${{ needs.build.outputs.summary }}
+        run: echo "report (M0 は thamit に送らない) $SUMMARY"
