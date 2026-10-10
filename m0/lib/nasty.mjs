@@ -23,7 +23,13 @@ export const nastyItems = [
   { id: 'real-newline', field: 'description', value: '1行目\n2行目' },
   { id: 'brackets-raw', field: 'name', value: new RawString('[特別]{集会}<告知>') },
   { id: 'brackets-escaped', field: 'name', value: '[特別]{集会}<告知>' },
-  { id: 'unicode-escape', field: 'description', value: new EscapedString('あい𠮷') },
+  // BMP の文字を \u エスケープで書いたもの(あい)
+  { id: 'unicode-escape-bmp', field: 'description', value: new EscapedString('あい') },
+  // サロゲートペア(𠮷)を \u エスケープで書いたもの。VRCJson(SDK 3.10.5)は ClientSim で読み違える
+  // (7文字のゴミになる)。実機でも同じかを計測9で見る。配信ファイルでは、BMP の外の文字は生の UTF-8 で書く
+  { id: 'unicode-escape-surrogate', field: 'description', value: new EscapedString('𠮷') },
+  // 対照:同じ文字を生の UTF-8 で書いたもの
+  { id: 'astral-raw', field: 'description', value: 'あい𠮷' },
   { id: 'json-like', field: 'description', value: '{"x":{"y":"{"}}・[}' },
   { id: 'line-separator', field: 'description', value: '1行目\u20282行目\u20293行目' },
   { id: 'long-name', field: 'name', value: repeatToLength('長い名前のサンプル', 100) },
