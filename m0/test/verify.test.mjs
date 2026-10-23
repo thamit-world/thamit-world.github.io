@@ -148,7 +148,11 @@ describe('文字列のエスケープ(計画書 §6.9)', () => {
     assert.deepEqual([...new Set(findUnescapedCharacters(body.toString('utf8')))], ['[特別]{集会}<告知>'])
     const raw = body.toString('utf8')
     assert.ok(raw.includes('"[特別]{集会}<告知>"'))
-    assert.ok(raw.includes('\\u3042\\u3044\\ud842\\udfb7'))
+    // \u エスケープで書く項目は、BMP の文字とサロゲートペアを別々に持つ
+    assert.ok(raw.includes('"\\u3042\\u3044"'))
+    assert.ok(raw.includes('"\\ud842\\udfb7"'))
+    // 対照の項目は、同じ文字を生の UTF-8 で持つ
+    assert.ok(raw.includes('"あい𠮷"'))
     assert.equal(body.includes(lineSeparatorBytes), false)
   })
 
